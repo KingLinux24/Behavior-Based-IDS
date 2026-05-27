@@ -110,9 +110,3 @@ Expose the detection engine to your local network using the virtual environment'
 Navigate to http://127.0.0.1:8000/ in your browser to interact with the API interface.
 
 
-***
-
-### 💡 Pro-Tip for your GitHub Repo:
-1. In your project directory, create a folder for images: `mkdir -p docs/images`
-2. Save your browser screenshot inside that folder as `swagger_ui.png`.
-3. When someone opens your GitHub profile, the image will automatically render beautifull
