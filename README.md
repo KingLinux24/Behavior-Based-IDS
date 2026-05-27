@@ -71,6 +71,7 @@ When hitting the `/alerts` endpoint, the model outputs structured security telem
     "explanations": "Low average byte transfers (Typical of scanning/probing); Potential Port Scan"
   }
 ]
+```
 ⚠️ Real-World Limitations & Mitigations
 Concept Drift: Legitimate shifts in corporate network behavior (such as new software deployments or scheduled server maintenance) can masquerade as anomalies.
 
@@ -84,25 +85,28 @@ Mitigation: Seed the baseline strictly during pre-audited, verified clean window
 1. Installation & Environment Setup
 Clone the repository and install all locked dependencies inside an isolated virtual environment:
 
-Bash
+```Bash
 git clone [https://github.com/](https://github.com/)<your-username>/behavior-based-ids.git
 cd behavior-based-ids
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 2. Run the End-to-End Analytics Pipeline
 Execute data generation, structural feature transformation, training, and static inference processing in sequence:
 
-Bash
+```Bash
 python src/data/generate_flows.py && \
 python src/features/build_features.py && \
 python src/models/train.py && \
 python src/detection/detect.py
+```
 3. Launch the API Service
 Expose the detection engine to your local network using the virtual environment's web server engine:
 
-Bash
+```Bash
 .venv/bin/uvicorn src.api.app:app --reload --port 8000
+```
 Navigate to http://127.0.0.1:8000/ in your browser to interact with the API interface.
 
 
